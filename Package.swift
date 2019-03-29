@@ -1,15 +1,18 @@
+// swift-tools-version:5.0
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
 import PackageDescription
 
 var package = Package(
     name: "Turnstile",
     targets: [
-        Target(
+        .target(
             name: "Turnstile",
-            dependencies: [.Target(name: "TurnstileCrypto")]),
-        Target(
+            dependencies: ["TurnstileCrypto"]),
+        .target(
             name: "TurnstileCrypto"),
-        Target(
+        .target(
             name: "TurnstileWeb",
-            dependencies: [.Target(name: "Turnstile")]),
+            dependencies: ["Turnstile"]),
         ]
 )
